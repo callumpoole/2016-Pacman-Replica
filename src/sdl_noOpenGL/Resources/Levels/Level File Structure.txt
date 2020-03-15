@@ -1,0 +1,26 @@
+﻿Empty Space:
+	^
+Walls:
+	│	= alt-179
+	─	= alt-196
+	┌	= alt-218
+	┐	= alt-191
+	      
+	└	= alt-192
+	┘	= alt-217
+White ghost-barrier:
+	~
+Player1 spawn:
+	P
+Player2 spawn:
+	p
+Ghost spawns: (allowed 4)
+	g
+Dot spawn:
+	.
+Big Dot spawn:
+	o
+Fruit spawn:
+	f
+Teleporter:
+	*

@@ -1,0 +1,4 @@
+There is one animation per line.
+When on the line two numbers either side of comma denotes sprite coordinates which in our case means 1 sprite coordinate equals 64 pixels.
+Sprite Coordinates start from 0, not 1. Sprite Coordinates range from 0 to 11 in the x-axis, and 0 to 7 in the y-axis.
+A vertical line indicates the transition between sprite states.
