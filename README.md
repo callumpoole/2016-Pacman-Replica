@@ -2,7 +2,7 @@
 
 Created by Callum Poole at University of Lincoln: Games Computing in 2016.
 
-Game-Only and more details at: http://www.callumpoole.com/
+Windows .exe download and Youtube video can be seen at: http://www.callumpoole.com/
 
 Default Controls: (Rebindable in-game)  
     Esc						- Toggle Menu  
