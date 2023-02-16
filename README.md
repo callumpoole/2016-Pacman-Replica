@@ -2,7 +2,7 @@
 
 Created by Callum Poole at University of Lincoln: Games Computing in 2016.
 
-Windows .exe download and Youtube video can be seen at: http://www.callumpoole.com/
+[View in Portfolio](https://callumpoole.github.io/v1/#portfolio)
 
 Default Controls: (Rebindable in-game)  
 
