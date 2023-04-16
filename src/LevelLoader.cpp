@@ -5,13 +5,13 @@
 #include <locale>
 #include <codecvt>
 
+#include "Common.h"
 #include "Player.h"
 #include "Ghost.h"
 #include "Wall.h"
 #include "Collectable.h"
 #include "Teleporter.h"
 
-const char* LevelLoader::LEVELS_PATH = "Resources\\Levels\\";
 LevelLoader::EEntityType** LevelLoader::grid;
 int LevelLoader::gridSize = 0;
 

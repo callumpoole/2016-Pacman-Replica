@@ -7,11 +7,14 @@ solution "PacmanReplica"
 	-- A project defines one build target
 	project ("PacmanReplicaProject")	
 		binaries = "./bin/"
+		build = "./build/"
+		os.mkdir(binaries)
+		os.mkdir(build)
 	
 		kind "ConsoleApp"
-		location (binaries)
+		location (build)
 		language "C++"
-		targetdir ( "./build/" )
+		targetdir (binaries)
 		
 		configuration { "windows" }
 			buildoptions ""

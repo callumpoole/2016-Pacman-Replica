@@ -1,9 +1,8 @@
 #include "AudioGenerator.h"
-#include "MenuManager.h"
 #include <math.h>
 #include <algorithm>
-
-#define AUDIO_PATH "Resources\\Audio\\"
+#include "Common.h"
+#include "MenuManager.h"
 
 std::map<std::string, Mix_Music*> AudioGenerator::musicClips;
 std::map<std::string, Mix_Chunk*> AudioGenerator::audioClips;

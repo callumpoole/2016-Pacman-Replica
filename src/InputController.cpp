@@ -24,7 +24,7 @@ InputController::InputController(int playerID) {
 
 bool InputController::LoadKeyBindings(int playerID) {
 	try {
-		std::ifstream infile("Resources\\KeyBindings.txt");
+		std::ifstream infile(KEYBINDINGS_PATH);
 		
 		std::cout << "Loading Controls for P" << playerID << std::endl;
 
@@ -44,7 +44,7 @@ bool InputController::LoadKeyBindings(int playerID) {
 		infile.close();
 		return true;
 	}catch(...) {
-		std::cout << "Error loading: Resources\\KeyBindings.txt\n" \
+		std::cout << "Error loading: " KEYBINDINGS_PATH "\n" \
 					 "Setting defaults to: W A S D  |  EDirection::Up EDirection::Left EDirection::Down EDirection::Right\n";
 		return false;
 	}
@@ -53,7 +53,7 @@ bool InputController::LoadKeyBindings(int playerID) {
 
 
 bool InputController::SetKeyBinding(int indexInFile, SDL_Keycode code) {
-	std::ifstream filein("Resources\\KeyBindings.txt"); //File to read from
+	std::ifstream filein(KEYBINDINGS_PATH); //File to read from
 
 	std::string lines[9];
 	std::string line;
@@ -62,7 +62,7 @@ bool InputController::SetKeyBinding(int indexInFile, SDL_Keycode code) {
 	}
 	filein.close();
 	
-	std::ofstream fileout("Resources\\KeyBindings.txt");
+	std::ofstream fileout(KEYBINDINGS_PATH);
 
 	for (int i = 0; i < 9; i++) {
 		if (i == indexInFile)
@@ -79,7 +79,3 @@ bool InputController::SetKeyBinding(int indexInFile, SDL_Keycode code) {
 
 	return true;
 }
-
-
-
-

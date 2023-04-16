@@ -9,10 +9,10 @@ struct Anim {
 	int numberOfStages = 0;
 	int currentStage = 0;
 };
+
 class Animation : public Component
 {
 private:
-	static const char* ANIM_PATH;
 	Sprite* sprite;
 	Anim* anims;
 	int numberOfAnims;

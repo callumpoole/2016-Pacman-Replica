@@ -2,9 +2,9 @@
 #include <sstream>
 #include <string>
 #include <fstream>
+#include "Common.h"
 #include "Button.h"
 #include "MenuManager.h"
-
 
 HighScoresMenu::HighScoresMenu()
 {
@@ -24,7 +24,7 @@ HighScoresMenu::HighScoresMenu()
 
 void HighScoresMenu::LoadScores() {
 
-	std::ifstream infile("Resources\\HighScores.txt");
+	std::ifstream infile(HIGHSCORES_PATH);
 
 	std::string line; 
 	for (int i = 0;std::getline(infile, line) && i < 10; i++) { 
@@ -67,7 +67,7 @@ void HighScoresMenu::SortScores(std::vector<HighScore>& items) {
 
 void HighScoresMenu::AddScore(std::string name, int score)
 {
-	std::ifstream infile("Resources\\HighScores.txt");
+	std::ifstream infile(HIGHSCORES_PATH);
 	std::vector<HighScore> items;
 	items.push_back(HighScore{ name, score });
 
@@ -86,20 +86,8 @@ void HighScoresMenu::AddScore(std::string name, int score)
 	SortScores(items);
 	infile.close();
 
-	std::ofstream a_file("Resources\\HighScores.txt");
+	std::ofstream a_file(HIGHSCORES_PATH);
 	for (unsigned int i = 0; i < items.size(); i++)
 		a_file << items[i].name << "," << items[i].score << std::endl;
 	a_file.close();
 }
-
-
-
-
-/*
-
-std::shared_ptr<DispText> ptr2(new DispText(SDL_Rect{ 6,33,4,1 }, std::string("0")));
-ptr2->autoWidth = 1;
-ptr2->tag = "ScoreCount";
-scene.textObjs.push_back(std::move(ptr2));
-
-*/

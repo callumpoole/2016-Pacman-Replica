@@ -3,7 +3,6 @@
 class LevelLoader
 {
 private:
-	static const char* LEVELS_PATH;
 	static int gridSize;
 public:
 	enum class EEntityType : int {

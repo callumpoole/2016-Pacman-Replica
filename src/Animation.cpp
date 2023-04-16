@@ -4,9 +4,8 @@
 #include <fstream>
 #include <sstream>
 #include <stdio.h>
+#include "Common.h"
 #include "Sprite.h"
-
-const char* Animation::ANIM_PATH = "Resources\\Animations\\";
 
 Animation::Animation(Sprite* sprite) : sprite(sprite) {
 	type = EComponentType::Animation; 

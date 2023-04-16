@@ -31,7 +31,7 @@ public:
 	bool isCentralised = false;
 	SDL_Rect message_rect; //SDL_rect for the message
 
-	DispText(SDL_Rect rect, std::string text, int size = 100, SDL_Color col = { 255, 255, 255 }, std::string typeface = "Resources\\Fonts\\Hack-Regular.ttf");
+	DispText(SDL_Rect rect, std::string text, int size = 100, SDL_Color col = { 255, 255, 255 }, std::string typeface = DEFAULT_TYPEFACE_PATH);
 
 	int GenerateTexture();
 

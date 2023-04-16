@@ -15,7 +15,6 @@ private:
 	static SDL_Renderer *renderer; //pointer to the renderer from main, link made in: SetupSprites()
 
 	const int TILE_SIZE = 64;
-	static const std::string SPRITE_SHEET_PATH;
 
 	SDL_Rect destImage{};
 	Coord spriteCoord;

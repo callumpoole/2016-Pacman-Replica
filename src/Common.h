@@ -36,7 +36,11 @@ public:
 	}
 };
 
-
-
-
-
+#define RESOURCES_FOLDER_PATH "..\\src\\Resources\\" //TODO: Fix
+#define SPRITE_SHEET_PATH		RESOURCES_FOLDER_PATH "Sprites\\SpriteSheet.png"
+#define LEVELS_PATH				RESOURCES_FOLDER_PATH "Levels\\"
+#define KEYBINDINGS_PATH		RESOURCES_FOLDER_PATH "KeyBindings.txt"
+#define HIGHSCORES_PATH			RESOURCES_FOLDER_PATH "HighScores.txt"
+#define DEFAULT_TYPEFACE_PATH	RESOURCES_FOLDER_PATH "Fonts\\Hack-Regular.ttf"
+#define AUDIO_PATH				RESOURCES_FOLDER_PATH "Audio\\"
+#define ANIM_PATH				RESOURCES_FOLDER_PATH "Animations\\"

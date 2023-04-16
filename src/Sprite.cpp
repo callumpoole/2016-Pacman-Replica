@@ -1,5 +1,6 @@
 #include "Sprite.h"
 #include <iostream>
+#include "Common.h"
 #include "SceneManager.h"
 
 SDL_Texture *Sprite::tex; //pointer to the SDL_Texture
@@ -7,11 +8,10 @@ SDL_Renderer *Sprite::renderer; //pointer to the renderer from main, link made i
 int Sprite::outputSize = 64;
 Coord Sprite::topLeftOffset = { 0, 0 };
 bool Sprite::updateSize = false;
-const std::string Sprite::SPRITE_SHEET_PATH = "Resources\\Sprites\\SpriteSheet.png";
 
 int Sprite::SetupSprites(SDL_Window *win, SDL_Renderer *renderer)
 {
-	SDL_Surface* surface = IMG_Load(SPRITE_SHEET_PATH.c_str());
+	SDL_Surface* surface = IMG_Load(SPRITE_SHEET_PATH);
 	if (surface == nullptr) {
 		SDL_DestroyRenderer(renderer);
 		SDL_DestroyWindow(win);
