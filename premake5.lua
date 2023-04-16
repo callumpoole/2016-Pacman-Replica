@@ -1,6 +1,5 @@
-
 -- A solution contains projects, and defines the available configurations
-solution "graphicsByExample"
+solution "PacmanReplica"
    configurations { "Debug", "Release"}
 
    flags { "Unicode" , "NoPCH"}
@@ -63,7 +62,7 @@ solution "graphicsByExample"
           libdirs {
                     "./graphics_dependencies/glew/lib/Release/Win32",
                     "./graphics_dependencies/SDL2/lib/win32",
-					"./graphics_dependencies/SDL2_image/lib/x86/",
+                    "./graphics_dependencies/SDL2_image/lib/x86/",
 					"./graphics_dependencies/SDL2_ttf/lib/x86/",
 					"./graphics_dependencies/SDL2_mixer/lib/x86/",
                   }
@@ -88,43 +87,24 @@ solution "graphicsByExample"
 
           -- copy dlls on windows
           -- tag::windowsDLLCopy[]
-		-- copy dlls on windows
-		print("OS is:", os.get())
-		if os.get() == "windows" then
-			print("Copying binaries for Windows ...")
-
-			-- SDL2
-			print("  ... SDL2")
-			os.copyfile("./graphics_dependencies/SDL2/lib/win32/SDL2.dll", path.join(binPath, "SDL2.dll"))
-
-			-- SDL2_image
-			print("  ... SDL2_image")
-			os.copyfile("./graphics_dependencies/SDL2_image/lib/x86/SDL2_image.dll", path.join(binPath, "SDL2_image.dll"))
-			os.copyfile("./graphics_dependencies/SDL2_image/lib/x86/libjpeg-9.dll", path.join(binPath, "libjpeg-9.dll"))
-			os.copyfile("./graphics_dependencies/SDL2_image/lib/x86/libpng16-16.dll", path.join(binPath, "libpng16-16.dll"))
-			os.copyfile("./graphics_dependencies/SDL2_image/lib/x86/libtiff-5.dll", path.join(binPath, "libtiff-5.dll"))
-			os.copyfile("./graphics_dependencies/SDL2_image/lib/x86/libwebp-4.dll", path.join(binPath, "libwebp-4.dll"))
-			os.copyfile("./graphics_dependencies/SDL2_image/lib/x86/zlib1.dll", path.join(binPath, "zlib1.dll"))
-
-			-- SDL2_ttf
-			print("  ... SDL2_ttf")
-			os.copyfile("./graphics_dependencies/SDL2_ttf/lib/x86/SDL2_ttf.dll", path.join(binPath, "SDL2_ttf.dll"))
-			os.copyfile("./graphics_dependencies/SDL2_ttf/lib/x86/libfreetype-6.dll", path.join(binPath, "libfreetype-6.dll"))
-				-- also requires zlib1, but copied already
-
-			-- SDL2_mixer
-			print("  ... SDL2_mixer")
-			os.copyfile("./graphics_dependencies/SDL2_mixer/lib/x86/SDL2_mixer.dll", path.join(binPath, "SDL2_mixer.dll"))
-			os.copyfile("./graphics_dependencies/SDL2_mixer/lib/x86/libFLAC-8.dll", path.join(binPath, "libFLAC-8.dll"))
-			os.copyfile("./graphics_dependencies/SDL2_mixer/lib/x86/libmodplug-1.dll", path.join(binPath, "libmodplug-1.dll"))
-			os.copyfile("./graphics_dependencies/SDL2_mixer/lib/x86/libogg-0.dll", path.join(binPath, "libogg-0.dll"))
-			os.copyfile("./graphics_dependencies/SDL2_mixer/lib/x86/libvorbis-0.dll", path.join(binPath, "libvorbis-0.dll"))
-			os.copyfile("./graphics_dependencies/SDL2_mixer/lib/x86/libvorbisfile-3.dll", path.join(binPath, "libvorbisfile-3.dll"))
-			os.copyfile("./graphics_dependencies/SDL2_mixer/lib/x86/smpeg2.dll", path.join(binPath, "smpeg2.dll"))
-
-			-- glew
-			print("  ... glew")
-			os.copyfile("./graphics_dependencies/glew/bin/Release/Win32/glew32.dll", path.join(binPath, "glew32.dll"))
-		end
+          if os.get() == "windows" then
+             os.copyfile("./graphics_dependencies/glew/bin/Release/Win32/glew32.dll", path.join(projectName, "glew32.dll"))
+             os.copyfile("./graphics_dependencies/SDL2/lib/win32/SDL2.dll", path.join(projectName, "SDL2.dll"))
+             os.copyfile("./graphics_dependencies/SDL2_image/lib/x86/SDL2_image.dll", path.join(projectName, "SDL2_image.dll"))
+             os.copyfile("./graphics_dependencies/SDL2_image/lib/x86/libjpeg-9.dll", path.join(projectName, "libjpeg-9.dll"))
+             os.copyfile("./graphics_dependencies/SDL2_image/lib/x86/libpng16-16.dll", path.join(projectName, "libpng16-16.dll"))
+             os.copyfile("./graphics_dependencies/SDL2_image/lib/x86/libtiff-5.dll", path.join(projectName, "libtiff-5.dll"))
+             os.copyfile("./graphics_dependencies/SDL2_image/lib/x86/libwebp-4.dll", path.join(projectName, "libwebp-4.dll"))
+             os.copyfile("./graphics_dependencies/SDL2_image/lib/x86/zlib1.dll", path.join(projectName, "zlib1.dll"))
+			 os.copyfile("./graphics_dependencies/SDL2_ttf/lib/x86/SDL2_ttf.dll", path.join(projectName, "SDL2_ttf.dll"))
+			 os.copyfile("./graphics_dependencies/SDL2_ttf/lib/x86/libfreetype-6.dll", path.join(projectName, "libfreetype-6.dll"))
+			 os.copyfile("./graphics_dependencies/SDL2_mixer/lib/x86/SDL2_mixer.dll", path.join(projectName, "SDL2_mixer.dll"))
+			 os.copyfile("./graphics_dependencies/SDL2_mixer/lib/x86/libFLAC-8.dll", path.join(projectName, "libFLAC-8.dll"))
+			 os.copyfile("./graphics_dependencies/SDL2_mixer/lib/x86/libmodplug-1.dll", path.join(projectName, "libmodplug-1.dll"))
+			 os.copyfile("./graphics_dependencies/SDL2_mixer/lib/x86/libogg-0.dll", path.join(projectName, "libogg-0.dll"))
+			 os.copyfile("./graphics_dependencies/SDL2_mixer/lib/x86/libvorbis-0.dll", path.join(projectName, "libvorbis-0.dll"))
+			 os.copyfile("./graphics_dependencies/SDL2_mixer/lib/x86/libvorbisfile-3.dll", path.join(projectName, "libvorbisfile-3.dll"))
+			 os.copyfile("./graphics_dependencies/SDL2_mixer/lib/x86/smpeg2.dll", path.join(projectName, "smpeg2.dll"))
+          end
           -- end::windowsDLLCopy[]
    end
